@@ -1,29 +1,39 @@
 export const VIEWERS = [
   {
-    id: "선영",
+    id: "Sun",
     label: "선영으로 보기"
   },
   {
-    id: "문규",
+    id: "Moon",
     label: "문규로 보기"
   }
 ];
 
 const AUTHOR_AVATAR_PATH = {
-  선영: "/assets/images/profiles/sunyoung.jpg",
-  문규: "/assets/images/profiles/moongyu.jpg"
+  Sun: "/assets/images/profiles/sun.jpg",
+  Moon: "/assets/images/profiles/moon.jpg"
 };
 
-export function getDefaultViewerId() {
-  return VIEWERS[0].id;
+const DISPLAY_NAME_BY_VIEWER_ID = {
+  Sun: "선영",
+  Moon: "문규"
+};
+
+export function getDefaultViewerId(initialViewerId) {
+  const matchedViewer = VIEWERS.find((viewer) => viewer.id === initialViewerId);
+  return matchedViewer ? matchedViewer.id : VIEWERS[0].id;
 }
 
 export function getMessageType(author, currentViewerId) {
   return author === currentViewerId ? "sent" : "received";
 }
 
+export function getDisplayName(viewerId) {
+  return DISPLAY_NAME_BY_VIEWER_ID[viewerId] || viewerId;
+}
+
 export function getAvatarText(author) {
-  return author ? author.trim().charAt(0) : "?";
+  return getDisplayName(author).trim().charAt(0) || "?";
 }
 
 export function getAvatarImagePath(author) {

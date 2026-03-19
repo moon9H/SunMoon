@@ -7,11 +7,13 @@ import {
   renderLoadError
 } from "./render.js";
 
+const initialViewerId = document.body.dataset.initialViewer;
+
 const state = {
   conversations: [],
   conversationDetails: {},
   selectedConversationId: null,
-  currentViewerId: getDefaultViewerId(),
+  currentViewerId: getDefaultViewerId(initialViewerId),
   isDetailLoading: false,
   detailLoadError: false
 };

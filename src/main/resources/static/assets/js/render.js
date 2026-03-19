@@ -1,6 +1,7 @@
 import { elements } from "./elements.js";
 import {
   VIEWERS,
+  getDisplayName,
   getAvatarImagePath,
   getAvatarText,
   getMessageType
@@ -70,14 +71,15 @@ function createConversationItem(conversation, selectedConversationId, onSelectCo
 }
 
 function createAvatar(message) {
+  const displayName = getDisplayName(message.author);
   const avatar = document.createElement("div");
   avatar.className = "message-avatar";
-  avatar.setAttribute("aria-label", `${message.author} 프로필`);
+  avatar.setAttribute("aria-label", `${displayName} 프로필`);
 
   const avatarImagePath = getAvatarImagePath(message.author);
   const avatarImage = document.createElement("img");
   avatarImage.className = "message-avatar-image";
-  avatarImage.alt = `${message.author} 프로필 사진`;
+  avatarImage.alt = `${displayName} 프로필 사진`;
   avatarImage.src = avatarImagePath;
 
   const avatarFallback = document.createElement("span");
@@ -101,6 +103,7 @@ function createAvatar(message) {
 
 function createMessageRow(message, currentViewerId) {
   const messageType = getMessageType(message.author, currentViewerId);
+  const displayName = getDisplayName(message.author);
   const row = document.createElement("div");
   row.className = `message-row ${messageType}`;
 
@@ -110,7 +113,7 @@ function createMessageRow(message, currentViewerId) {
 
   const author = document.createElement("div");
   author.className = "message-author";
-  author.textContent = message.author;
+  author.textContent = displayName;
 
   const bubbleRow = document.createElement("div");
   bubbleRow.className = "message-bubble-row";

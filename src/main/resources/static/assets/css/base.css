@@ -17,7 +17,7 @@
   --shadow-soft: 0 10px 24px rgba(171, 103, 133, 0.12);
 }
 
-body[data-viewer="선영"] {
+body[data-viewer="Sun"] {
   --body-background: linear-gradient(180deg, #fff1f7 0%, #ffdce8 100%);
   --bg-panel: rgba(255, 248, 252, 0.92);
   --bg-soft: #fffafd;
@@ -36,7 +36,7 @@ body[data-viewer="선영"] {
   --shadow-soft: 0 10px 24px rgba(171, 103, 133, 0.12);
 }
 
-body[data-viewer="문규"] {
+body[data-viewer="Moon"] {
   --body-background: linear-gradient(180deg, #edf8ff 0%, #d9efff 100%);
   --bg-panel: rgba(246, 252, 255, 0.92);
   --bg-soft: #fafdff;

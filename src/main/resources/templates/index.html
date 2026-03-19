@@ -11,21 +11,38 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
   <link rel="stylesheet" th:href="@{/assets/css/style.css}" href="assets/css/style.css">
 </head>
-<body>
+<body
+  th:attr="data-viewer=${currentViewerId},data-initial-viewer=${currentViewerId},data-login-id=${currentLoginId},data-display-name=${currentDisplayName}">
   <div class="memory-app">
     <aside class="sidebar-panel">
       <div class="brand-box">
         <p class="brand-label">Memory Archive</p>
         <h1 class="brand-title">Sun & Moon</h1>
         <p class="brand-description">
-          연인과 나눈 대화를 다시 펼쳐보는 추억 리마인드 웹
+          둘만의 대화를 다시 천천히 돌아보는 추억 리마인드 공간입니다.
         </p>
       </div>
 
       <div class="sidebar-tools">
+        <section class="session-card" aria-label="현재 로그인 사용자">
+          <p class="session-card-label">Signed In</p>
+          <div class="session-card-user">
+            <div>
+              <p class="session-card-name" th:text="${currentDisplayName}">문규</p>
+              <p class="session-card-meta">
+                <span th:text="${currentLoginId}">moon</span> 계정으로 접속 중
+              </p>
+            </div>
+            <form class="logout-form" th:action="@{/logout}" method="post">
+              <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+              <button class="logout-button" type="submit">로그아웃</button>
+            </form>
+          </div>
+        </section>
+
         <div class="viewer-switch-box">
-          <p class="viewer-switch-label">누구의 화면으로 볼까요?</p>
-          <div id="viewerToggle" class="viewer-toggle" aria-label="현재 사용자 선택"></div>
+          <p class="viewer-switch-label">현재 어떤 시점으로 볼까요?</p>
+          <div id="viewerToggle" class="viewer-toggle" aria-label="현재 사용자 시점 선택"></div>
         </div>
 
         <button id="randomMemoryButton" class="btn random-button" type="button">
@@ -46,13 +63,13 @@
       <header class="detail-header">
         <div>
           <p id="detailDate" class="detail-date">날짜</p>
-          <h2 id="detailTitle" class="detail-title">대화를 선택해주세요</h2>
+          <h2 id="detailTitle" class="detail-title">대화를 선택해 주세요</h2>
         </div>
       </header>
 
       <section id="messageContainer" class="message-container">
         <div class="empty-state">
-          왼쪽 목록에서 대화를 선택하면 이곳에 상세 내용이 표시됩니다.
+          왼쪽 목록에서 대화를 선택하면 여기에 상세 내용이 표시됩니다.
         </div>
       </section>
     </main>

@@ -18,11 +18,10 @@ public class DbHealthCheckService {
     }
 
     public Map<String, Object> check() {
+        jdbcTemplate.queryForObject("select 1", Integer.class);
+
         Map<String, Object> response = new LinkedHashMap<>();
         response.put("status", "ok");
-        response.put("database", jdbcTemplate.queryForObject("select current_database()", String.class));
-        response.put("currentUser", jdbcTemplate.queryForObject("select current_user", String.class));
-        response.put("serverTime", jdbcTemplate.queryForObject("select now()::text", String.class));
         return response;
     }
 }
