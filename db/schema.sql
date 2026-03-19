@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS app_user (
     CONSTRAINT uq_app_user_viewer_id
         UNIQUE (viewer_id),
     CONSTRAINT chk_app_user_viewer_id
-        CHECK (viewer_id IN ('문규', '선영'))
+        CHECK (viewer_id IN ('Moon', 'Sun'))
 );
 
 CREATE TABLE IF NOT EXISTS message (

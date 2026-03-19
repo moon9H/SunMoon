@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import io.cloudtype.sunmoon.auth.AuthenticatedUser;
+import io.cloudtype.sunmoon.auth.IdentityDisplayNameMapper;
 
 @Controller
 public class ViewController {
@@ -18,7 +19,10 @@ public class ViewController {
         Model model
     ) {
         model.addAttribute("currentViewerId", authenticatedUser.getViewerId());
-        model.addAttribute("currentDisplayName", authenticatedUser.getDisplayName());
+        model.addAttribute(
+            "currentDisplayName",
+            IdentityDisplayNameMapper.toDisplayName(authenticatedUser.getViewerId())
+        );
         model.addAttribute("currentLoginId", authenticatedUser.getUsername());
         return "index";
     }
