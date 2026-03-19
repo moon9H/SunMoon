@@ -14,8 +14,9 @@ const AUTHOR_AVATAR_PATH = {
   문규: "/assets/images/profiles/moongyu.jpg"
 };
 
-export function getDefaultViewerId() {
-  return VIEWERS[0].id;
+export function getDefaultViewerId(initialViewerId) {
+  const matchedViewer = VIEWERS.find((viewer) => viewer.id === initialViewerId);
+  return matchedViewer ? matchedViewer.id : VIEWERS[0].id;
 }
 
 export function getMessageType(author, currentViewerId) {

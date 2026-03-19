@@ -28,6 +28,9 @@ public class SecurityConfig {
                 .anyRequest().denyAll()
             )
             .formLogin((formLogin) -> formLogin
+                .loginPage("/login")
+                .usernameParameter("loginId")
+                .passwordParameter("password")
                 .defaultSuccessUrl("/", true)
                 .permitAll()
             )
