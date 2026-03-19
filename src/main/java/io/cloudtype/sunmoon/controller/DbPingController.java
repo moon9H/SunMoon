@@ -27,17 +27,7 @@ public class DbPingController {
             return ResponseEntity.ok(dbHealthCheckService.check());
         } catch (Exception exception) {
             Map<String, Object> response = new LinkedHashMap<>();
-            Throwable rootCause = exception;
-
-            while (rootCause.getCause() != null) {
-                rootCause = rootCause.getCause();
-            }
-
             response.put("status", "error");
-            response.put("errorType", exception.getClass().getSimpleName());
-            response.put("message", exception.getMessage());
-            response.put("rootCauseType", rootCause.getClass().getSimpleName());
-            response.put("rootCauseMessage", rootCause.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
