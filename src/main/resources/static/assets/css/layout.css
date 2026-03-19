@@ -1,0 +1,47 @@
+.memory-app {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  height: 100vh;
+  padding: 24px;
+}
+
+.sidebar-panel,
+.detail-panel {
+  min-height: 0;
+  border: 1px solid var(--line-color);
+  border-radius: 28px;
+  background: var(--bg-panel);
+  box-shadow: var(--shadow-soft);
+}
+
+.sidebar-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 22px;
+}
+
+.detail-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+}
+
+@media (max-width: 960px) {
+  body {
+    height: auto;
+    overflow: auto;
+  }
+
+  .memory-app {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100vh;
+    padding: 16px;
+  }
+
+  .sidebar-panel,
+  .detail-panel {
+    padding: 22px 18px;
+  }
+}

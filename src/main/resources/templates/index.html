@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SunMoon Memory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" th:href="@{/assets/css/style.css}" href="assets/css/style.css">
+</head>
+<body>
+  <div class="memory-app">
+    <aside class="sidebar-panel">
+      <div class="brand-box">
+        <p class="brand-label">Memory Archive</p>
+        <h1 class="brand-title">SunMoon Memory</h1>
+        <p class="brand-description">
+          연인과 나눈 대화를 다시 펼쳐보는 추억 리마인드 웹
+        </p>
+      </div>
+
+      <div class="sidebar-tools">
+        <div class="viewer-switch-box">
+          <p class="viewer-switch-label">누구의 화면으로 볼까요?</p>
+          <div id="viewerToggle" class="viewer-toggle" aria-label="현재 사용자 선택"></div>
+        </div>
+
+        <button id="randomMemoryButton" class="btn random-button" type="button">
+          랜덤 추억 보기
+        </button>
+      </div>
+
+      <section class="conversation-list-section">
+        <div class="section-heading">
+          <h2>대화 목록</h2>
+          <span id="conversationCount" class="conversation-count">0개</span>
+        </div>
+        <ul id="conversationList" class="conversation-list"></ul>
+      </section>
+    </aside>
+
+    <main class="detail-panel">
+      <header class="detail-header">
+        <div>
+          <p id="detailDate" class="detail-date">날짜</p>
+          <h2 id="detailTitle" class="detail-title">대화를 선택해주세요</h2>
+        </div>
+      </header>
+
+      <section id="messageContainer" class="message-container">
+        <div class="empty-state">
+          왼쪽 목록에서 대화를 선택하면 이곳에 상세 내용이 표시됩니다.
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" th:src="@{/assets/js/app.js}" src="assets/js/app.js"></script>
+</body>
+</html>

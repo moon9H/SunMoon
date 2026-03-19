@@ -1,0 +1,76 @@
+:root {
+  --body-background: linear-gradient(180deg, #fff1f7 0%, #ffdce8 100%);
+  --bg-panel: rgba(255, 248, 252, 0.92);
+  --bg-soft: #fffafd;
+  --line-color: rgba(167, 95, 130, 0.16);
+  --text-main: #4b2f3b;
+  --text-subtle: #8b6272;
+  --highlight: #e38ab0;
+  --highlight-deep: #c75f8f;
+  --highlight-soft: #f8dbe8;
+  --item-bg: #fffdfd;
+  --item-hover-bg: #fff3f8;
+  --item-active-bg: #ffe8f2;
+  --sent-bubble-bg: #f3bfd6;
+  --received-bubble-bg: #fffafd;
+  --avatar-bg: #f7dce8;
+  --shadow-soft: 0 10px 24px rgba(171, 103, 133, 0.12);
+}
+
+body[data-viewer="선영"] {
+  --body-background: linear-gradient(180deg, #fff1f7 0%, #ffdce8 100%);
+  --bg-panel: rgba(255, 248, 252, 0.92);
+  --bg-soft: #fffafd;
+  --line-color: rgba(167, 95, 130, 0.16);
+  --text-main: #4b2f3b;
+  --text-subtle: #8b6272;
+  --highlight: #e38ab0;
+  --highlight-deep: #c75f8f;
+  --highlight-soft: #f8dbe8;
+  --item-bg: #fffdfd;
+  --item-hover-bg: #fff3f8;
+  --item-active-bg: #ffe8f2;
+  --sent-bubble-bg: #f3bfd6;
+  --received-bubble-bg: #fffafd;
+  --avatar-bg: #f7dce8;
+  --shadow-soft: 0 10px 24px rgba(171, 103, 133, 0.12);
+}
+
+body[data-viewer="문규"] {
+  --body-background: linear-gradient(180deg, #edf8ff 0%, #d9efff 100%);
+  --bg-panel: rgba(246, 252, 255, 0.92);
+  --bg-soft: #fafdff;
+  --line-color: rgba(92, 142, 178, 0.18);
+  --text-main: #27404f;
+  --text-subtle: #5b7c91;
+  --highlight: #7bbde5;
+  --highlight-deep: #4e9dcd;
+  --highlight-soft: #dceffd;
+  --item-bg: #fbfeff;
+  --item-hover-bg: #eef8ff;
+  --item-active-bg: #dff1ff;
+  --sent-bubble-bg: #c8e7fb;
+  --received-bubble-bg: #fafdff;
+  --avatar-bg: #dceffd;
+  --shadow-soft: 0 10px 24px rgba(90, 146, 186, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Sunflower", "Malgun Gothic", sans-serif;
+  color: var(--text-main);
+  background: var(--body-background);
+  transition: background 0.35s ease, color 0.25s ease;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
