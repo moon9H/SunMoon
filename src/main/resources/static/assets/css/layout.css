@@ -3,6 +3,7 @@
   grid-template-columns: 360px 1fr;
   gap: 24px;
   height: 100vh;
+  min-height: 100dvh;
   padding: 24px;
 }
 
@@ -30,18 +31,47 @@
 @media (max-width: 960px) {
   body {
     height: auto;
+    min-height: 100dvh;
     overflow: auto;
   }
 
   .memory-app {
     grid-template-columns: 1fr;
     height: auto;
-    min-height: 100vh;
+    min-height: 100dvh;
+    gap: 16px;
     padding: 16px;
   }
 
   .sidebar-panel,
   .detail-panel {
     padding: 22px 18px;
+    border-radius: 24px;
+  }
+
+  .detail-panel {
+    height: 58dvh;
+    min-height: 0;
+    max-height: 58dvh;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 640px) {
+  .memory-app {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .sidebar-panel,
+  .detail-panel {
+    padding: 18px 14px;
+    border-radius: 20px;
+  }
+
+  .detail-panel {
+    height: 56dvh;
+    min-height: 0;
+    max-height: 56dvh;
   }
 }

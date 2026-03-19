@@ -26,6 +26,8 @@
   gap: 16px;
   min-height: 0;
   padding: 24px 8px 24px 2px;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .empty-state {
@@ -41,13 +43,49 @@
 }
 
 @media (max-width: 960px) {
+  .detail-header {
+    padding-bottom: 16px;
+  }
+
   .detail-title {
     font-size: 1.6rem;
+  }
+
+  .message-container {
+    padding: 18px 4px 12px 0;
+  }
+
+  .empty-state {
+    min-height: 220px;
   }
 }
 
 @media (max-width: 640px) {
   .detail-header {
     flex-direction: column;
+    gap: 8px;
+  }
+
+  .detail-date {
+    font-size: 0.84rem;
+  }
+
+  .detail-title {
+    margin-top: 2px;
+    font-size: 1.28rem;
+    line-height: 1.35;
+  }
+
+  .message-container {
+    gap: 14px;
+    padding: 16px 0 8px;
+  }
+
+  .empty-state {
+    min-height: 180px;
+    border-radius: 18px;
+    padding: 18px;
+    font-size: 0.94rem;
+    line-height: 1.55;
   }
 }

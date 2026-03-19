@@ -180,8 +180,97 @@
   flex-shrink: 0;
   width: 18px;
   height: 18px;
-  background-image: url("../images/ui/message-count-bubble.png");
+  background-image: url("../images/ui/heart-64.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+@media (max-width: 960px) {
+  .brand-box {
+    padding: 0 0 20px;
+  }
+
+  .brand-title {
+    font-size: 1.75rem;
+  }
+
+  .sidebar-tools {
+    padding-bottom: 16px;
+  }
+
+  .conversation-list-section {
+    padding-top: 16px;
+  }
+
+  .conversation-list {
+    max-height: 34vh;
+    padding-right: 4px;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-label,
+  .conversation-count,
+  .viewer-switch-label {
+    font-size: 0.84rem;
+  }
+
+  .brand-title {
+    font-size: 1.52rem;
+  }
+
+  .brand-description {
+    margin-top: 10px;
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .viewer-toggle-button,
+  .random-button {
+    padding: 11px 12px;
+    font-size: 0.92rem;
+  }
+
+  .section-heading {
+    margin-bottom: 12px;
+  }
+
+  .section-heading h2 {
+    font-size: 1.08rem;
+  }
+
+  .conversation-list {
+    gap: 10px;
+    max-height: 30vh;
+  }
+
+  .conversation-button {
+    padding: 14px;
+  }
+
+  .conversation-title-row,
+  .conversation-meta {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .conversation-title {
+    font-size: 0.94rem;
+  }
+
+  .conversation-meta {
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .conversation-date,
+  .conversation-message-count {
+    font-size: 0.8rem;
+  }
+
+  .conversation-message-icon {
+    width: 16px;
+    height: 16px;
+  }
 }

@@ -129,11 +129,40 @@
 }
 
 @media (max-width: 640px) {
+  .message-row {
+    gap: 8px;
+  }
+
+  .message-avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 0.84rem;
+  }
+
   .message-content {
-    max-width: calc(100% - 56px);
+    max-width: calc(100% - 46px);
   }
 
   .message-bubble-row {
     align-items: flex-start;
+    gap: 6px;
+  }
+
+  .message-bubble {
+    border-radius: 16px;
+    padding: 9px 12px;
+  }
+
+  .message-author {
+    font-size: 0.82rem;
+  }
+
+  .message-text {
+    font-size: 0.94rem;
+    line-height: 1.5;
+  }
+
+  .message-time {
+    font-size: 0.72rem;
   }
 }
