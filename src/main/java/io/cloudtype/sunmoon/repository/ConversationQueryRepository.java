@@ -31,7 +31,7 @@ public class ConversationQueryRepository {
             FROM conversation c
             LEFT JOIN message m ON m.conversation_id = c.id
             GROUP BY c.id, c.title, c.memory_date
-            ORDER BY c.memory_date DESC, c.id DESC
+            ORDER BY c.memory_date ASC, c.id ASC
             """;
 
         return jdbcTemplate.query(
