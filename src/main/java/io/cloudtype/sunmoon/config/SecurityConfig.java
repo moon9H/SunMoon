@@ -3,6 +3,7 @@ package io.cloudtype.sunmoon.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -23,6 +24,7 @@ public class SecurityConfig {
         http
             .authenticationProvider(authenticationProvider)
             .authorizeHttpRequests((authorize) -> authorize
+                .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 .antMatchers("/assets/**", "/favicon.ico", "/login", "/error").permitAll()
                 .antMatchers("/", "/api/**", "/db/ping").authenticated()
                 .anyRequest().denyAll()
